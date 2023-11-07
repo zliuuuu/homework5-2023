@@ -13,7 +13,9 @@
       opacity: 1;
     }
   }
-  
+    main{
+    margin-top: 200px;
+  }
   /* Body font and background */
   body {
     font-family: 'Poppins', serif;
