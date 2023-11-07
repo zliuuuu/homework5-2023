@@ -1,0 +1,185 @@
+/* Logo animation */
+#logo {
+    animation: logoZoomFadeIn 5s forwards;
+  }
+  
+  @keyframes logoZoomFadeIn {
+    0% {
+      width: 25px;
+      opacity: 0;
+    }
+    100% {
+      width: 475px;
+      opacity: 1;
+    }
+  }
+  
+  /* Body font and background */
+  body {
+    font-family: 'Poppins', serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+  }
+  
+  /* Header flexbox */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  body > header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+}
+  /* Nav links flexbox */
+  .nav_links {
+    display: flex;
+    flex-direction: column; /* Stacks the links vertically on small screens */
+    align-items: center; /* Centers the links */
+    gap: 15px;
+  }
+  
+  /* Link color consistency */
+  a, a:visited {
+    color: #0000FF
+  }
+  
+  /* Card header styling */
+  .card > header {
+    background-color: #288088;
+    border: 3px solid #45ADAD;
+    padding: 20px 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+  
+  /* Card flexbox */
+  .card {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 450px;
+    border-radius: 50px 50px 0 0;
+    
+  }
+  
+  /* Pricing flexbox */
+  .pricing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Gallery image styling */
+  .gallery img {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+  }
+  
+  /* Gallery flexbox */
+  .gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  @media screen and (min-width: 900px) {
+    /* Header and nav_links flex properties */
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+  
+    .nav_links {
+        display: flex;
+        flex-direction: row; /* Aligns the links horizontally on larger screens */
+        justify-content: flex-end;
+        gap: 20px;
+      }
+    
+    /* Pricing and card flex properties */
+    .pricing {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    }
+  
+    .card {
+      /* position: sticky; */
+      flex: 0 1 275px;
+    }
+
+    main{
+        margin-top: 100px;
+    }
+    
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    /* Reduced motion for logo */
+    #logo {
+      animation: none;
+    }
+  }
+  
+  @media print {
+    /* Print styles */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: none;
+    }
+    main {
+        background-color: #f1f1f1;
+        margin-top: 100px;
+      }
+ 
+    nav {
+        width: 100%;
+      }
+
+    .nav_links {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+      }
+   
+  
+    .pricing {
+      flex-wrap: nowrap;
+      align-items: flex-end;
+    }
+  
+    .card {
+      border: 2px solid #45ADDD;
+      flex-basis: 325px;
+    }
+  
+    .gallery, #gallery {
+      display: none;
+    }
+  
+    main li:nth-child(2)::after {
+        content: ' 👍';
+        font-size: 1.5em;
+      }
+   
+  }
+  
